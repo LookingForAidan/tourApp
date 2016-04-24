@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TourApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <style>
+    body {
+        background-color: #6f83c3;
+    }
+    text {
+      color: #000000;
+    }
+    h1{
+      color: #ffffff;
+    }
+    button {    
+      background-color: #daae4a;
+      border: none;
+      color: #000000;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      transition-duration: 0.4s;
+    }
+    p {
+        font-weight: bold;
+        font-family: helvetica;
+        color: #000000;
+    }
+    table {
+      
+    }
+.table-nonfluid {
+   width: auto !important;
+}
+  
+  </style>
+
+</head>
+<body>
+
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+    <center>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <br>
+  
+    <br>
+    <div>
+      <% if user_signed_in? %>
+        <div>
+          Signed in as: <%= current_user.email %>(<%= link_to 'Sign out', destroy_user_session_path,:method => :delete%>)
+        </div>
+      <% else %>
+  
+  
+      <table>
+        <tr>
+          <th>
+            <form method="get" action="/users/sign_up">
+              <button type="submit">Register!</button>
+            </form>
+          </th>
+          <th>&nbsp;</th>
+          <th>
+            <form method="get" action="/users/sign_in">
+              <button type="submit">Log In!</button>
+            </form> 
+          </th>
+        </tr>
+      </table>
+      <% end %>
+    </div>
+    </center>
+    </div>
+  </div>
+</body>
+</html>

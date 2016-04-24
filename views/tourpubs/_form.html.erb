@@ -1,0 +1,48 @@
+<%= form_for(@tourpub) do |f| %>
+  <% if @tourpub.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tourpub.errors.count, "error") %> prohibited this Tourpub from being saved:</h2>
+
+      <ul>
+      <% @tourpub.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+  <div class="field">
+   First Name: <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+   Last Name: <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    Email: <%= f.text_field :email %>
+  </div>
+  <div class="field">
+  Date: <%= f.date_select :date %>
+  </div>
+   
+  <p><b>Add some extra features to the crawl!</b></p>
+  
+  <div class="field"> 
+    Not into larger? Click for the cider option!
+    <%= check_box_tag 'tourpub[cider]', 'cider' %>
+  </div>
+
+
+  <div class="field"> 
+    Wanna feel hip and young? Upgrade to the Craft beer option:
+    <%= check_box_tag 'tourpub[craft]', 'craft' %>
+  </div>
+  
+   <div class="field"> 
+    End of night Kebab meal, StayClassy
+    <%= check_box_tag 'tourpub[kebab]', 'kebab' %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

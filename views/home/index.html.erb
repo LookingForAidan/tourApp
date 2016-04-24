@@ -1,0 +1,56 @@
+<div ="container">
+<center>
+<br>
+<br>
+<br>
+
+<br>
+<h1>Welcome to Guiders</h1>
+<br>
+<% if user_signed_in? %>
+
+
+    <p>We offer Tour Guides for a walking tour of Dublin city and also a boat tour. Please choose below which you would like to join!</p><p> We also have a Q&A section for you to ask questions about the tours!</p>
+    <br>
+    <table>
+      <tr>
+        <th>
+            <form method="get" action="/tours">
+                <button type="submit">The Tour of Dublin!</button>
+            </form>
+        </th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>
+           <form method="get" action="/tourtwos">
+                <button type="submit">The Dublin Boat Tour!</button>
+            </form> 
+        </th>
+      </tr>
+    
+    
+    </table>
+    <br>
+    <table>
+          <tr >
+          
+          <th colspan=5>
+              <form method="get" action="/blogs">
+                <button type="submit">   Frequently Asked Questions!   </button>
+            </form> 
+          </th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+      </tr>
+    </table>
+  
+<% else %>
+
+    <p>Please log in or register to book a tour guide!</p>
+
+<% end %>
+
+</center>
+</div>

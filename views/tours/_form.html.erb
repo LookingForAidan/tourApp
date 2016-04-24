@@ -1,0 +1,53 @@
+<%= form_for(@tour) do |f| %>
+  <% if @tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+      <% @tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    First Name: <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+  Last Name:
+    <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+  Email:
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    Date:
+    <%= f.date_select :date %>
+  </div>
+  <br>
+  <p><b>Add some extra features to the tour!</b></p>
+  
+  <div class="field"> 
+    Include audio tape: 
+    <%= check_box_tag 'tour[audio]', 'audio' %>
+  </div>
+
+
+  <div class="field"> 
+    Include lunch with tour:
+    <%= check_box_tag 'tour[lunch]', 'lunch' %>
+  </div>
+
+  <div class="field"> 
+    OAP and Student discount:
+    <%= check_box_tag 'tour[discount]', 'discount' %> 
+  </div>
+  
+  
+  
+  <div class="actions">
+    <%= f.submit 'Join Tour' %>
+  </div>
+<% end %>

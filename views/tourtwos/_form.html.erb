@@ -1,0 +1,46 @@
+<%= form_for(@tourtwo) do |f| %>
+  <% if @tourtwo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tourtwo.errors.count, "error") %> prohibited this tourtwo from being saved:</h2>
+
+      <ul>
+      <% @tourtwo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+  <div class="field">
+   First Name:
+    <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+   Last Name:
+    <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    EMail:
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+  Date:
+    <%= f.date_select :date %>
+  </div>
+   
+  <p><b></b>Add some extra features to the tour!</b></p>
+  
+  <div class="field"> 
+    Include a lifejacket (Highly recomended): 
+    <%= check_box_tag 'tourtwo[life]', 'life' %>
+  </div>
+
+
+  <div class="field"> 
+    Take the tour of Howth instead:
+    <%= check_box_tag 'tourtwo[liffey]', 'liffey' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Join Tour'%>
+  </div>
+<% end %>

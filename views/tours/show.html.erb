@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @tour.fname %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @tour.lname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @tour.email %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tour.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @tour.date %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @tour.cost %>
+</p>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>

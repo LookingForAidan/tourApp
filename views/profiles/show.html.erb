@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<div <div class="container">
+<h5>
+  <table class="table table-nonfluid"  style="background: #ffffff; ">
+  <tr>
+  <th><strong>Firstname:</strong></th>
+  <th><%= @profile.firstname %></th>
+<tr></tr>
+  <th><strong>Lastname:</strong></th>
+  <th><%= @profile.lastname %></th>
+<tr></tr>
+  <th><strong>Address:</strong></th>
+  <th><%= @profile.address %></th>
+  </tr>
+  </table>
+</h5>
+</div>
+<br>
+
+<table>
+  <tr>
+    <th>
+      <%= link_to '<button style="padding: none;">Edit</button>'.html_safe, edit_profile_path(@profile) %> 
+    </th>
+    <th>&nbsp;</th>
+    <th>
+
+<form method="get" action="/">
+  <button type="submit">Book Tour!</button>
+</form> 
+</th></tr></table>
